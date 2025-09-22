@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AI Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+            opacity: 0.9;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--electric-blue);
+        }
+
+        .input-group .form-control {
+            padding-left: 3rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card card fade-in">
+            <div class="login-header">
+                <h1 class="text-gradient">Welcome Back</h1>
+                <p>Login to continue your conversation</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group slide-up">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="form-group slide-up">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-login slide-up">
+                    <i class="fas fa-sign-in-alt me-2"></i> Login
+                </button>
+            </form>
+            <div class="register-link slide-up">
+                <p>Don't have an account? <a href="register.html" class="link">Register here</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="validation.js"></script>
+    <script>
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your login validation here
+            window.location.href = 'chatbot.html'; // Redirect to chatbot after login
+        });
+    </script>
+</body>
+</html>

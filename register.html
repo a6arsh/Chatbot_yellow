@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - AI Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .register-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .register-card {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .register-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .register-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+            opacity: 0.9;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--electric-blue);
+        }
+
+        .input-group .form-control {
+            padding-left: 3rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .password-strength {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .strength-bar {
+            height: 4px;
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .strength-bar div {
+            height: 100%;
+            width: 0;
+            transition: all 0.3s ease;
+        }
+
+        .weak { background-color: var(--vibrant-red); }
+        .medium { background-color: var(--warm-pink); }
+        .strong { background-color: var(--electric-blue); }
+
+        .btn-register {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .terms {
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+
+        .invalid-feedback {
+            display: none;
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 0.875rem;
+            color: #ff4757;
+        }
+
+        .form-control.is-invalid {
+            border-color: #ff4757;
+            box-shadow: 0 0 0 0.2rem rgba(255, 71, 87, 0.25);
+        }
+
+        .form-control.is-invalid ~ .invalid-feedback {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-card card fade-in">
+            <div class="register-header">
+                <h1 class="text-gradient">Create Account</h1>
+                <p>Join our AI chatbot community</p>
+            </div>
+            <form id="registerForm">
+                <div class="form-group slide-up">
+                    <label for="fullName">Full Name</label>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="form-group slide-up">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="form-group slide-up">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="password-strength">
+                        <span>Strength:</span>
+                        <div class="strength-bar">
+                            <div id="strengthIndicator"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group slide-up">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-register slide-up">
+                    <i class="fas fa-user-plus me-2"></i> Create Account
+                </button>
+                <p class="terms slide-up">
+                    By creating an account, you agree to our Terms of Service and Privacy Policy
+                </p>
+            </form>
+            <div class="login-link slide-up">
+                <p>Already have an account? <a href="login.html" class="link">Login here</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="validation.js"></script>
+</body>
+</html>

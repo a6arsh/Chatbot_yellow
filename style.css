@@ -1,0 +1,139 @@
+/* Netflix-inspired styles for login and register pages */
+
+:root {
+    --netflix-red: #e50914;
+    --netflix-black: #141414;
+    --netflix-dark-gray: #222222;
+    --netflix-light-gray: #757575;
+    --netflix-white: #ffffff;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    color: var(--netflix-white);
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.netflix-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    z-index: -1;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #000000;
+    padding: 0.8rem;
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    background-color: var(--netflix-white);
+    box-shadow: 0 0 0 2px var(--netflix-red);
+    color: #000000;
+}
+
+.form-control::placeholder {
+    color: #666666;
+}
+
+.form-floating > label {
+    color: #666666;
+}
+
+.btn-netflix {
+    background-color: var(--netflix-red);
+    color: var(--netflix-white);
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-netflix:hover {
+    background-color: #f40612;
+    transform: scale(1.02);
+}
+
+.netflix-link {
+    color: var(--netflix-light-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.netflix-link:hover {
+    color: var(--netflix-white);
+}
+
+.text-netflix {
+    color: var(--netflix-red);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Form validation styles */
+.invalid-feedback {
+    color: var(--netflix-red);
+    font-size: 0.8rem;
+}
+
+.form-check-input:checked {
+    background-color: var(--netflix-red);
+    border-color: var(--netflix-red);
+}
+
+/* Password strength indicator */
+.password-strength {
+    height: 2px;
+    margin-top: -8px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+
+.strength-weak {
+    background-color: #e50914;
+    width: 30%;
+}
+
+.strength-medium {
+    background-color: #f5b014;
+    width: 60%;
+}
+
+.strength-strong {
+    background-color: #2ecc71;
+    width: 100%;
+}

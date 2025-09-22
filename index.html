@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot - Redirecting...</title>
+    <style>
+        body {
+            background: #000000;
+            color: #FFD700;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .loading {
+            text-align: center;
+        }
+        .spinner {
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            border-top: 3px solid #FFD700;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        // Redirect to single-page app after 1 second
+        setTimeout(function() {
+            window.location.href = 'app.html';
+        }, 1000);
+    </script>
+</head>
+<body>
+    <div class="loading">
+        <div class="spinner"></div>
+        <h2>🤖 ChatBot Loading...</h2>
+        <p>Redirecting to login page...</p>
+    </div>
+</body>
+</html>
