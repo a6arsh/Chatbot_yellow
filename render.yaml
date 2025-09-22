@@ -1,11 +1,12 @@
+# Render Blueprint for ChatBot
 services:
-  # Backend API Service
+  # Python Backend Service
   - type: web
     name: chatbot-backend
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python backend.py"
     plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python backend.py
     envVars:
       - key: GROQ_API_KEY
         sync: false
@@ -14,21 +15,6 @@ services:
       - key: PORT
         value: 10000
       - key: FLASK_DEBUG
-        value: False
+        value: false
       - key: ALLOWED_ORIGINS
         value: "*"
-
-  # Static Site Service for Frontend
-  - type: static
-    name: chatbot-frontend
-    buildCommand: "echo 'No build needed for static files'"
-    staticPublishPath: .
-    plan: free
-    headers:
-      - path: /*
-        name: Cache-Control
-        value: public, max-age=0, must-revalidate
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
