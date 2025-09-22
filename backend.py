@@ -75,6 +75,15 @@ def health_check():
         'timestamp': datetime.now().isoformat(),
         'service': 'ChatBot Backend'
     })
+    
+@app.route('/', methods=['GET'])
+def home():
+    """Root route to confirm backend is running"""
+    return jsonify({
+        "status": "ok",
+        "message": "ChatBot Backend is running 🚀",
+        "timestamp": datetime.now().isoformat()
+    })
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
